@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to right, #2a0478, #7bfec7);
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 400px;
+            text-align: left;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+    </style>
+    <title>User Dashboard</title>
+</head>
+<body>
+    <h1>Welcome to User Dashboard</h1>
+    
+    <div>
+        <h2>Upload Resume</h2>
+        <form method="post" action="{{ url_for('upload_resume') }}" enctype="multipart/form-data">
+            <label for="resume">Select Resume:</label>
+            <input type="file" id="resume" name="resume" accept=".pdf, .doc, .docx" required>
+            <label for="job_description">Job Description:</label>
+            <input type="text" id="job_description" name="job_description" required>
+            <label for="deadline">Deadline:</label>
+            <input type="date" id="deadline" name="deadline" required>
+            <button type="submit">Upload Resume</button>
+        </form>
+    </div>
+
+    
+</body>
+</html>
